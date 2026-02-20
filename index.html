@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>News CG Header</title>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@700;800&family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', 'Kanit', sans-serif;
+    background-color: transparent;
+  }
+
+  /* คอนเทนเนอร์หลักสีเขียว #007947 */
+  .hero-container {
+    background-color: #007947;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ตกแต่งพื้นหลังด้วยวงกลมจางๆ ให้ดูมีมิติ */
+  .hero-container::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: -100px;
+    left: -100px;
+  }
+
+  .content-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    z-index: 1;
+  }
+
+  /* ฝั่งซ้าย: ข้อความ */
+  .text-side {
+    flex: 1;
+    color: white;
+  }
+  
+  /* หัวข้อที่มีขีดขาวข้างหน้า */
+  .header-group {
+    border-left: 5px solid white;
+    padding-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .main-title {
+    font-family: 'Figtree', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+
+  .sub-header {
+    font-family: 'Kanit', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 5px 0 0 0;
+    opacity: 0.9;
+  }
+
+  .description {
+    font-family: 'Kanit', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top: 20px;
+    max-width: 450px;
+  }
+
+  /* ฝั่งขวา: รูปอินโฟกราฟิก */
+  .image-side {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .info-card {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+  }
+
+  .info-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+  }
+
+  /* เอฟเฟกต์ตอนชี้รูป */
+  .info-card:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  }
+
+  /* Responsive สำหรับมือถือ */
+  @media (max-width: 900px) {
+    .content-wrapper {
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+    }
+    .hero-container {
+      padding: 40px 20px;
+    }
+    .header-group {
+      border-left: none;
+      border-bottom: 3px solid white;
+      padding-left: 0;
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+    .description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .main-title { font-size: 36px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="hero-container">
+    <div class="content-wrapper">
+      
+      <div class="text-side">
+        <div class="header-group">
+          <h1 class="main-title">News Corporate Governance</h1>
+          <p class="sub-header">ข่าวสารทั่วไปด้านกำกับดูแลกิจการ</p>
+        </div>
+        <p class="description">
+          ทำความรู้จักกับ <strong>"คะแนนดัชนีการรับรู้การทุจริต"</strong><br>
+          (Corruption Perceptions Index : CPI) และผลกระทบที่สำคัญต่อภาพลักษณ์ขององค์กรและประเทศ
+        </p>
+      </div>
+
+      <div class="image-side">
+        <div class="info-card">
+          <img src="infographic-cpi.png" alt="Corruption Perceptions Index Info">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
